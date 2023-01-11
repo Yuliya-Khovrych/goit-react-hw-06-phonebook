@@ -15,8 +15,7 @@ export const ContactForm = () => {
     const number = evt.target.number.value;
     contacts.find(({ name }) => name.toLowerCase() === newName.toLowerCase())
       ? Notiflix.Notify.failure(`${newName} is already  in contacts.`)
-      : dispatch(addContact(newName, number));
-    form.reset();
+      : dispatch(addContact(newName, number)) && form.reset();
   };
 
   return (
